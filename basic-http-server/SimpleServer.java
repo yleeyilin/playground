@@ -2,6 +2,9 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * `curl http://localhost:8080`
+ */
 public class SimpleServer {
     public static void main(String[] args) throws IOException {
         int port = 8080; // binded port
