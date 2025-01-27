@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     pthread_t threads[NUM_THREADS];
 
     for (size_t i = 0; i < NUM_THREADS; i++) {
-        int thread = pthread_create(&threads[i], NULL, fn, (void *)i); 
+        int thread = pthread_create(&threads[i], NULL, &fn, (void *)i); 
         if (thread) { // will be null if it is fine 
             printf("NOT_HERE");
             exit(-1);
