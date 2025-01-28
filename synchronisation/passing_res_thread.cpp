@@ -29,5 +29,6 @@ int main(int argc, char* argv[]) {
         return -2; 
     }
     printf("Result = %d", *final_res); 
+    free(final_res);
     return 0;
 }
