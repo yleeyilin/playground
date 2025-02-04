@@ -1,5 +1,5 @@
 import socket
-import time 
+# import time 
 
 serverName = 'localhost'
 serverPort = 12000
