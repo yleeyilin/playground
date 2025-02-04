@@ -10,6 +10,8 @@ clientSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # wait for input
 textInput = input("Write something: ")
 
+# must ensure that serverSocket has been set up before this 
+# line is triggered.
 clientSocket.sendto(textInput.encode(), address)
 
 # will wait until it hears from the socket 
