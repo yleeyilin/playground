@@ -30,6 +30,8 @@ public class SimpleServer {
                    "\n" +
                    "Hello, World!\n";
 
+            System.out.println(response);
+
             outputStream.write(response.getBytes()); 
         } finally {
             socket.close(); 
