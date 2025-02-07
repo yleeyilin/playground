@@ -23,12 +23,11 @@ while True:
     input = clientSocket.makefile('r')
 
     input_text = [] # stores all the input in a array
-    while (data := input.readline()): # when hvnt reach EOF
+    while ((data := input.readline()) != '\n'): # when hvnt reach EOF
         input_text.append(data)
-        print(repr(input_text))
+        print(repr(data))
 
-    # TODO: FIGURE OUT WHY IT DOESNT REACH HERE
-    print("REACHED HERE.")
+    print("Client has terminated connection.")
     # sends all input text to the client socket 
     clientSocket.sendall(''.join(input_text).encode())
 
