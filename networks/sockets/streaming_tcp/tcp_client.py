@@ -3,10 +3,10 @@ import socket
 # tcp 3-way handshake is at the transport layer
 # this means that the applications / processes are not aware 
 
-clientName = 'localhost'
-clientPort = 12000
+serverName = 'localhost'
+serverPort = 12000
 
-address = (clientName, clientPort)
+address = (serverName, serverPort)
 
 clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 clientSocket.connect(address) # initiates a 3 way handshake 
