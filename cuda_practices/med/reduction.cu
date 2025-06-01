@@ -1,11 +1,11 @@
 #include "solve.h"
 #include <cuda_runtime.h>
 
-__global__ void parallel_reduction(const float* input, const float* output, int N) {
-    // combine halved idx 
+__global__ void parallel_reduction(const float* input, float* output, int N) {
+    // combine half idx 
     int global_idx = blockIdx.x * blockDim.x + threadIdx.x; 
 
-    __shared__ unsigned long long data[blockDim.x];
+    __shared__ float data[256];
 
     data[threadIdx.x] = (global_idx < N) ? input[global_idx] : 0; 
     __syncthreads();
@@ -18,7 +18,7 @@ __global__ void parallel_reduction(const float* input, const float* output, int 
     }
 
     if (threadIdx.x == 0) {
-        atomicAdd(&output, data[0]);
+        output[blockIdx.x] = data[0];
     }
 }
 
