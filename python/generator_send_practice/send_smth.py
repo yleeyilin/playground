@@ -10,3 +10,4 @@ if __name__ == "__main__":
     payloads = [1,2,3,4,5]
     for p in payloads:
         print(f"prev one was {gen.send(p)}")
+
