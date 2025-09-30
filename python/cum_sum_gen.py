@@ -9,7 +9,7 @@ def cum_sum() -> Generator[int, int, None]:
 
 if __name__ == "__main__":
     cs_gen = cum_sum()
-    next(cs_gen) # give us the total 
+    print(next(cs_gen)) # give us the total 
     while True:
         to_add = input("Value to add: ")
         total = cs_gen.send(int(to_add)) # pass it to the yield variable 
