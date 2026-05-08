@@ -19,6 +19,7 @@ def smallest_prime_factor(n):
     our goal here is to find the smallest prime number that divides it
 
     note: this is a variation of sieve of eratosthenes 
+    ref: https://codeforces.com/blog/entry/140773
     """
     prime_factor = [i for i in range(n+1)]
     p = 2 
